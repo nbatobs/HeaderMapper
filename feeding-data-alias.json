@@ -388,7 +388,7 @@
     ]
   },
 
-  "feeding-proportions_in_tonnnes_of_dry_matter_digester1": {
+  "feeding_proportions_in_tonnnes_of_dry_matter_digester1": {
     "canonicalName": "feeding_digester1",
     "description": "Value related to Digester 1, possibly feed allocation or other metric.",
     "dataType": "number",
@@ -399,7 +399,7 @@
     ]
   },
 
-  "feeding-proportions_in_tonnnes_of_dry_matter_digester2": {
+  "feeding_proportions_in_tonnnes_of_dry_matter_digester2": {
     "canonicalName": "feeding_digester2",
     "description": "Value related to Digester 2, possibly feed allocation or other metric.",
     "dataType": "number",
