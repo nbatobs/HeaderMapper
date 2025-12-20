@@ -1,0 +1,355 @@
+{
+  "date": {
+    "canonicalName": "date",
+    "description": "The calendar date on which the measurements were recorded.",
+    "dataType": "date",
+    "required": true,
+    "exampleValues": ["2024-01-01", "2024-06-15"],
+    "aliases": [
+      "date",
+      "measurement date",
+      "day"
+    ]
+  },
+
+  "transfer_to_post_digester_m3": {
+    "canonicalName": "transfer_to_post_digester_m3",
+    "description": "Volume of digestate transferred from Digester 1 to the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["119", "150"],
+    "aliases": [
+      "transfer from digester to post digester",
+      "transfer to post digester (m3)",
+      "digestate transfer"
+    ]
+  },
+
+  "total_retention_time_days": {
+    "canonicalName": "total_retention_time_days",
+    "description": "Total hydraulic retention time across the entire process.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["47.7", "50"],
+    "aliases": [
+      "total retention time",
+      "total retention time (d)"
+    ]
+  },
+  "digester1_process_water_m3": {
+    "canonicalName": "digester1_process_water_m3",
+    "description": "Volume of process water added in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["25", "30"],
+    "aliases": [
+      "process water",
+      "process water (m3)",
+      "digester 1 process water"
+    ]
+  },
+
+  "digester1_retention_time_days": {
+    "canonicalName": "digester1_retention_time_days",
+    "description": "Hydraulic retention time in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["25.4", "28"],
+    "aliases": [
+      "retention time",
+      "retention time (d)",
+      "digester 1 retention time"
+    ]
+  },
+
+  "digester1_volume_m3": {
+    "canonicalName": "digester1_volume_m3",
+    "description": "Average volume in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["5000", "5200"],
+    "aliases": [
+      "digester 1 average volume",
+      "digester 1 volume (m3)"
+    ]
+  },
+
+  "digester1_dry_matter_percent": {
+    "canonicalName": "digester1_dry_matter_percent",
+    "description": "Dry matter content in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["11.69", "11.5"],
+    "aliases": [
+      "dry matter",
+      "dry matter (%)",
+      "digester 1 dm"
+    ]
+  },
+
+  "digester1_ph": {
+    "canonicalName": "digester1_ph",
+    "description": "pH value in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["7.6", "7.8"],
+    "aliases": [
+      "ph",
+      "digester 1 ph"
+    ]
+  },
+
+  "digester1_alkalinity_mg_l": {
+    "canonicalName": "digester1_alkalinity_mg_l",
+    "description": "Alkalinity (TAC) in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["11375", "12000"],
+    "aliases": [
+      "alkalinity (tac)",
+      "alkalinity (mg/l)",
+      "tac"
+    ]
+  },
+
+  "digester1_vfa_mg_l": {
+    "canonicalName": "digester1_vfa_mg_l",
+    "description": "Volatile fatty acids (VFA/FOS) in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["2750", "3000"],
+    "aliases": [
+      "vfa (fos)",
+      "vfa (mg/l)",
+      "fos"
+    ]
+  },
+
+  "digester1_fos_tac_ratio": {
+    "canonicalName": "digester1_fos_tac_ratio",
+    "description": "FOS/TAC ratio (stability indicator) in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["0.242", "0.25"],
+    "aliases": [
+      "fos/tac",
+      "vfa/alkalinity ratio"
+    ]
+  },
+
+  "digester1_ch4_percent": {
+    "canonicalName": "digester1_ch4_percent",
+    "description": "Methane content in biogas from Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["52.8", "54.4"],
+    "aliases": [
+      "ch4",
+      "ch4 (%)",
+      "methane content"
+    ]
+  },
+
+  "digester1_h2s_ppm": {
+    "canonicalName": "digester1_h2s_ppm",
+    "description": "Hydrogen sulfide content in biogas from Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["38", "26"],
+    "aliases": [
+      "h2s",
+      "h2s (ppm)"
+    ]
+  },
+
+  "digester1_temperature_c": {
+    "canonicalName": "digester1_temperature_c",
+    "description": "Temperature in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["46.5", "48.4"],
+    "aliases": [
+      "temp",
+      "temperature (°c)",
+      "digester 1 temp"
+    ]
+  },
+
+  "digester1_acetic_acid_mg_l": {
+    "canonicalName": "digester1_acetic_acid_mg_l",
+    "description": "Acetic acid concentration in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["100", "200"],
+    "aliases": [
+        "acetic acid",
+        "acetic acid (mg/l)",
+        "digester 1 acetic acid"
+        ]
+    },
+
+  "digester1_propionic_acid_mg_l": {
+    "canonicalName": "digester1_propionic_acid_mg_l",
+    "description": "Propionic acid concentration in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["50", "100"],
+    "aliases": [
+        "propionic acid",
+        "propionic acid (mg/l)",
+        "digester 1 propionic acid"
+        ]
+    },
+
+  "digester1_butyric_acid_mg_l": {
+    "canonicalName": "digester1_butyric_acid_mg_l",
+    "description": "Butyric acid concentration in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["20", "40"],
+    "aliases": [
+        "butyric acid",
+        "butyric acid (mg/l)",
+        "digester 1 butyric acid"
+        ]
+    },
+
+  "digester1_valeric_acid_mg_l": {
+    "canonicalName": "digester1_valeric_acid_mg_l",
+    "description": "Valeric acid concentration in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["10", "20"],
+    "aliases": [
+        "valeric acid",
+        "valeric acid (mg/l)",
+        "digester 1 valeric acid"
+        ]
+    },
+
+  "digester1_ammonium_nitrogen_mg_kg": {
+    "canonicalName": "digester1_ammonium_nitrogen_mg_kg",
+    "description": "Ammonium nitrogen concentration in Digester 1.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["1500", "2000"],
+    "aliases": [
+        "ammonium nitrogen",
+        "ammonium nitrogen [mg/kg]",
+        "digester 1 ammonium"
+        ]
+    },
+
+  "post_digester_retention_time_days": {
+    "canonicalName": "post_digester_retention_time_days",
+    "description": "Hydraulic retention time in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["22.3", "20"],
+    "aliases": [
+      "retention time",
+      "post digester retention time (d)"
+    ]
+  },
+
+  "post_digester_volume_m3": {
+    "canonicalName": "post_digester_volume_m3",
+    "description": "Volume in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["2597", "2600"],
+    "aliases": [
+      "pd volume",
+      "post digester volume (m3)"
+    ]
+  },
+
+  "post_digester_dry_matter_percent": {
+    "canonicalName": "post_digester_dry_matter_percent",
+    "description": "Dry matter content in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8", "9"],
+    "aliases": [
+      "dry matter",
+      "post digester dm (%)"
+    ]
+  },
+
+  "post_digester_temperature_c": {
+    "canonicalName": "post_digester_temperature_c",
+    "description": "Temperature in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["32.1", "34"],
+    "aliases": [
+      "temp",
+      "post digester temp (°c)"
+    ]
+  },
+
+ "post_digester_acetic_acid_mg_l": {
+    "canonicalName": "post_digester_acetic_acid_mg_l",
+    "description": "Acetic acid concentration in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["80", "150"],
+    "aliases": [
+        "acetic acid",
+        "acetic acid (mg/l)",
+        "post digester acetic acid"
+        ]
+    },
+
+  "post_digester_propionic_acid_mg_l": {
+    "canonicalName": "post_digester_propionic_acid_mg_l",
+    "description": "Propionic acid concentration in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["40", "80"],
+    "aliases": [
+        "propionic acid",
+        "propionic acid (mg/l)",
+        "post digester propionic acid"
+        ]
+    },
+
+  "post_digester_butyric_acid_mg_l": {
+    "canonicalName": "post_digester_butyric_acid_mg_l",
+    "description": "Butyric acid concentration in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15", "30"],
+    "aliases": [
+        "butyric acid",
+        "butyric acid (mg/l)",
+        "post digester butyric acid"
+        ]
+    },
+
+  "post_digester_valeric_acid_mg_l": {
+    "canonicalName": "post_digester_valeric_acid_mg_l",
+    "description": "Valeric acid concentration in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["5", "10"],
+    "aliases": [
+        "valeric acid",
+        "valeric acid (mg/l)",
+        "post digester valeric acid"
+        ]
+    },
+
+  "post_digester_ammonium_nitrogen_mg_kg": {
+    "canonicalName": "post_digester_ammonium_nitrogen_mg_kg",
+    "description": "Ammonium nitrogen concentration in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["1200", "1800"],
+    "aliases": [
+        "ammonium nitrogen",
+        "ammonium nitrogen [mg/kg]",
+        "post digester ammonium"
+        ]
+    }
+}

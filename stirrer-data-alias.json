@@ -1,0 +1,252 @@
+{
+  "date": {
+    "canonicalName": "date",
+    "description": "The calendar date on which the stirrer measurements were recorded.",
+    "dataType": "date",
+    "required": true,
+    "exampleValues": ["2024-01-01", "2024-06-15"],
+    "aliases": [
+      "date",
+      "measurement date",
+      "day"
+    ]
+  },
+
+  "digester1_mixer1_current_a": {
+    "canonicalName": "digester1_mixer1_current_a",
+    "description": "Current consumption of Mixer 1 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15.2", "18.5"],
+    "aliases": [
+      "digester 1 mixer 1 a",
+      "mixer 1 current",
+      "mixer 1 amperes",
+      "d1 mixer 1 a"
+    ]
+  },
+
+  "digester1_mixer1_power_kw": {
+    "canonicalName": "digester1_mixer1_power_kw",
+    "description": "Power consumption of Mixer 1 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8.5", "10.2"],
+    "aliases": [
+      "digester 1 mixer 1 kw",
+      "mixer 1 power",
+      "mixer 1 kilowatts",
+      "d1 mixer 1 kw"
+    ]
+  },
+
+  "digester1_mixer2_current_a": {
+    "canonicalName": "digester1_mixer2_current_a",
+    "description": "Current consumption of Mixer 2 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["16.1", "19.3"],
+    "aliases": [
+      "digester 1 mixer 2 a",
+      "mixer 2 current",
+      "mixer 2 amperes",
+      "d1 mixer 2 a"
+    ]
+  },
+
+  "digester1_mixer2_power_kw": {
+    "canonicalName": "digester1_mixer2_power_kw",
+    "description": "Power consumption of Mixer 2 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["9.0", "11.0"],
+    "aliases": [
+      "digester 1 mixer 2 kw",
+      "mixer 2 power",
+      "mixer 2 kilowatts",
+      "d1 mixer 2 kw"
+    ]
+  },
+
+  "digester1_mixer3_current_a": {
+    "canonicalName": "digester1_mixer3_current_a",
+    "description": "Current consumption of Mixer 3 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["14.8", "17.6"],
+    "aliases": [
+      "digester 1 mixer 3 a",
+      "mixer 3 current",
+      "mixer 3 amperes",
+      "d1 mixer 3 a"
+    ]
+  },
+
+  "digester1_mixer3_power_kw": {
+    "canonicalName": "digester1_mixer3_power_kw",
+    "description": "Power consumption of Mixer 3 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8.2", "9.8"],
+    "aliases": [
+      "digester 1 mixer 3 kw",
+      "mixer 3 power",
+      "mixer 3 kilowatts",
+      "d1 mixer 3 kw"
+    ]
+  },
+
+  "digester1_mixer4_current_a": {
+    "canonicalName": "digester1_mixer4_current_a",
+    "description": "Current consumption of Mixer 4 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15.5", "18.9"],
+    "aliases": [
+      "digester 1 mixer 4 a",
+      "mixer 4 current",
+      "mixer 4 amperes",
+      "d1 mixer 4 a"
+    ]
+  },
+
+  "digester1_mixer4_power_kw": {
+    "canonicalName": "digester1_mixer4_power_kw",
+    "description": "Power consumption of Mixer 4 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8.8", "10.5"],
+    "aliases": [
+      "digester 1 mixer 4 kw",
+      "mixer 4 power",
+      "mixer 4 kilowatts",
+      "d1 mixer 4 kw"
+    ]
+  },
+
+  "digester1_mixer5_current_a": {
+    "canonicalName": "digester1_mixer5_current_a",
+    "description": "Current consumption of Mixer 5 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["16.3", "19.1"],
+    "aliases": [
+      "digester 1 mixer 5 a",
+      "mixer 5 current",
+      "mixer 5 amperes",
+      "d1 mixer 5 a"
+    ]
+  },
+
+  "digester1_mixer5_power_kw": {
+    "canonicalName": "digester1_mixer5_power_kw",
+    "description": "Power consumption of Mixer 5 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["9.1", "10.8"],
+    "aliases": [
+      "digester 1 mixer 5 kw",
+      "mixer 5 power",
+      "mixer 5 kilowatts",
+      "d1 mixer 5 kw"
+    ]
+  },
+
+  "digester1_mixer6_current_a": {
+    "canonicalName": "digester1_mixer6_current_a",
+    "description": "Current consumption of Mixer 6 in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15.0", "18.2"],
+    "aliases": [
+      "digester 1 mixer 6 a",
+      "mixer 6 current",
+      "mixer 6 amperes",
+      "d1 mixer 6 a"
+    ]
+  },
+
+  "digester1_mixer6_power_kw": {
+    "canonicalName": "digester1_mixer6_power_kw",
+    "description": "Power consumption of Mixer 6 in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8.3", "10.1"],
+    "aliases": [
+      "digester 1 mixer 6 kw",
+      "mixer 6 power",
+      "mixer 6 kilowatts",
+      "d1 mixer 6 kw"
+    ]
+  },
+
+  "digester1_average_current_a": {
+    "canonicalName": "digester1_average_current_a",
+    "description": "Average current consumption across all mixers in Digester 1 measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15.5", "18.6"],
+    "aliases": [
+      "digester 1 average a",
+      "average current digester 1",
+      "d1 avg current",
+      "digester 1 avg a"
+    ]
+  },
+
+  "digester1_average_power_kw": {
+    "canonicalName": "digester1_average_power_kw",
+    "description": "Average power consumption across all mixers in Digester 1 measured in kilowatts.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8.7", "10.4"],
+    "aliases": [
+      "digester 1 average kw",
+      "average power digester 1",
+      "d1 avg power",
+      "digester 1 avg kw"
+    ]
+  },
+
+  "post_digester_mixer1_current_a": {
+    "canonicalName": "post_digester_mixer1_current_a",
+    "description": "Current consumption of Mixer 1 in Post Digester measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["12.3", "14.5"],
+    "aliases": [
+      "post digester mixer 1 a",
+      "pd mixer 1 current",
+      "pd mixer 1 amperes",
+      "post digester mixer 1 amperes"
+    ]
+  },
+
+  "post_digester_mixer2_current_a": {
+    "canonicalName": "post_digester_mixer2_current_a",
+    "description": "Current consumption of Mixer 2 in Post Digester measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["13.1", "15.2"],
+    "aliases": [
+      "post digester mixer 2 a",
+      "pd mixer 2 current",
+      "pd mixer 2 amperes",
+      "post digester mixer 2 amperes"
+    ]
+  },
+
+  "post_digester_mixer3_current_a": {
+    "canonicalName": "post_digester_mixer3_current_a",
+    "description": "Current consumption of Mixer 3 in Post Digester measured in Amperes.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["11.8", "14.0"],
+    "aliases": [
+      "post digester mixer 3 a",
+      "pd mixer 3 current",
+      "pd mixer 3 amperes",
+      "post digester mixer 3 amperes"
+    ]
+  }
+}
