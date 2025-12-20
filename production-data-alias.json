@@ -1,0 +1,193 @@
+{
+  "date": {
+    "canonicalName": "date",
+    "description": "The calendar date on which the measurements were recorded.",
+    "dataType": "date",
+    "required": true,
+    "exampleValues": ["2024-01-01", "2024-06-15"],
+    "aliases": [
+      "date",
+      "measurement date",
+      "day"
+    ]
+  },
+
+  "expected_biogas_yield_dm": {
+    "canonicalName": "expected_biogas_yield_dm",
+    "description": "Expected biogas yield per tonne of dry matter (DM).",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["350", "420"],
+    "aliases": [
+      "expected biogas yield (m3/t dm)",
+      "biogas yield dm",
+      "yield dm"
+    ]
+  },
+
+  "expected_biogas_yield_fm": {
+    "canonicalName": "expected_biogas_yield_fm",
+    "description": "Expected biogas yield per tonne of fresh matter (FM).",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["120", "150"],
+    "aliases": [
+      "expected biogas yield (m3/t fm)",
+      "biogas yield fm",
+      "yield fm"
+    ]
+  },
+
+  "downtime_hours": {
+    "canonicalName": "downtime_hours",
+    "description": "Total duration the plant or system was not operational.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["0", "2.5"],
+    "aliases": [
+      "downtime",
+      "downtime (h)",
+      "plant downtime"
+    ]
+  },
+
+  "flaring_hours": {
+    "canonicalName": "flaring_hours",
+    "description": "Total duration for which gas flaring occurred.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["0", "1.2"],
+    "aliases": [
+      "flaring",
+      "flaring (h)",
+      "flare duration"
+    ]
+  },
+
+  "gas_roof_percent": {
+    "canonicalName": "gas_roof_percent",
+    "description": "Percentage fill level of the gas roof or gas storage system.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["45", "78"],
+    "aliases": [
+      "gas roof",
+      "gas roof (%)",
+      "gas storage level"
+    ]
+  },
+
+  "total_biogas_m3": {
+    "canonicalName": "total_biogas_m3",
+    "description": "Total volume of biogas produced during the day.",
+    "dataType": "number",
+    "required": true,
+    "exampleValues": ["12500", "18300"],
+    "aliases": [
+      "total biogas",
+      "gas generation",
+      "total biogas (m3)",
+      "biogas produced",
+      "total gas"
+    ]
+  },
+
+  "chp_output_mwh_per_day": {
+    "canonicalName": "chp_output_mwh_per_day",
+    "description": "Total energy output from the combined heat and power (CHP) unit per day.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["4.5", "6.2"],
+    "aliases": [
+      "chp output",
+      "chp output (mwh/d)",
+      "chp energy output"
+    ]
+  },
+
+  "bgiu_unenriched_flow": {
+    "canonicalName": "bgiu_unenriched_flow",
+    "description": "Flow rate of unenriched biogas entering the gas upgrading unit (BGIU).",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["520", "610"],
+    "aliases": [
+      "bgiu unenriched flow",
+      "unenriched gas flow",
+      "bgiu unenriched flow (m3/h)"
+    ]
+  },
+
+  "enriched_flow_total": {
+    "canonicalName": "enriched_flow_total",
+    "description": "Total volume of enriched (upgraded) gas produced.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["8900", "9400"],
+    "aliases": [
+      "enriched flow total",
+      "total enriched flow",
+      "total enriched flow (m3/d)",
+      "enriched flow total (m3/d)"
+    ]
+  },
+
+  "enriched_flow": {
+    "canonicalName": "enriched_flow",
+    "description": "Instantaneous or daily flow rate of enriched (upgraded) gas.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["380", "415"],
+    "aliases": [
+      "enriched flow",
+      "upgraded gas flow",
+      "enriched flow (m3/h)"
+    ]
+  },
+
+  "biogas_yield_dm": {
+    "canonicalName": "biogas_yield_dm",
+    "description": "Actual biogas yield achieved for the given period.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["310", "365"],
+    "aliases": [
+      "biogas yield",
+      "gas yield",
+      "biogas yield (m3/t dm)"
+    ]
+  },
+
+  "biogas_yield_fm": {
+    "canonicalName": "biogas_yield_fm",
+    "description": "Actual biogas yield per tonne of fresh matter.",
+    "required": false,
+    "dataType": "number",
+    "aliases": [
+        "biogas yield (m3/t fm)", 
+        "yield fm actual"
+    ]
+  },
+
+  "ch4_yield_dm": {
+    "canonicalName": "ch4_yield_dm",
+    "description": "Methane yield per tonne of dry matter.",
+    "required": false,
+    "dataType": "number",
+    "aliases": [
+        "ch4 yield (m3/t dm)",
+        "methane yield dm"
+    ]
+  },
+
+  "ch4_yield_fm": {
+    "canonicalName": "ch4_yield_fm",
+    "description": "Methane yield per tonne of fresh matter.",
+    "required": false,
+    "dataType": "number",
+    "aliases": [
+        "ch4 yield (m3/t fm)", 
+        "methane yield fm"
+    ]
+  }
+}
