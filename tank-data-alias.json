@@ -36,16 +36,16 @@
       "total retention time (d)"
     ]
   },
-
-  "process_water_m3": {
-    "canonicalName": "process_water_m3",
-    "description": "Volume of process water added.",
+  "digester1_process_water_m3": {
+    "canonicalName": "digester1_process_water_m3",
+    "description": "Volume of process water added in Digester 1.",
     "dataType": "number",
     "required": false,
     "exampleValues": ["25", "30"],
     "aliases": [
       "process water",
-      "process water (m3)"
+      "process water (m3)",
+      "digester 1 process water"
     ]
   },
 
