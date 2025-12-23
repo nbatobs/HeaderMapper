@@ -13,7 +13,7 @@
   },
 
   "expected_biogas_yield_dm": {
-    "canonicalName": "expected_biogas_yield_dm",
+    "canonicalName": "expected_biogas_yield_m3_t_dm",
     "description": "Expected biogas yield per tonne of dry matter (DM).",
     "dataType": "number",
     "required": false,
@@ -26,7 +26,7 @@
   },
 
   "expected_biogas_yield_fm": {
-    "canonicalName": "expected_biogas_yield_fm",
+    "canonicalName": "expected_biogas_yield_m3_t_fm",
     "description": "Expected biogas yield per tonne of fresh matter (FM).",
     "dataType": "number",
     "required": false,
@@ -39,7 +39,7 @@
   },
 
   "downtime_hours": {
-    "canonicalName": "downtime_hours",
+    "canonicalName": "downtime_hours_h",
     "description": "Total duration the plant or system was not operational.",
     "dataType": "number",
     "required": false,
@@ -52,7 +52,7 @@
   },
 
   "flaring_hours": {
-    "canonicalName": "flaring_hours",
+    "canonicalName": "flaring_hours_h",
     "description": "Total duration for which gas flaring occurred.",
     "dataType": "number",
     "required": false,
@@ -65,7 +65,7 @@
   },
 
   "gas_roof_percent": {
-    "canonicalName": "gas_roof_percent",
+    "canonicalName": "gas_roof_%",
     "description": "Percentage fill level of the gas roof or gas storage system.",
     "dataType": "number",
     "required": false,
@@ -93,7 +93,7 @@
   },
 
   "chp_output_mwh_per_day": {
-    "canonicalName": "chp_output_mwh_per_day",
+    "canonicalName": "chp_output_mwh_d",
     "description": "Total energy output from the combined heat and power (CHP) unit per day.",
     "dataType": "number",
     "required": false,
@@ -106,7 +106,7 @@
   },
 
   "bgiu_unenriched_flow": {
-    "canonicalName": "bgiu_unenriched_flow",
+    "canonicalName": "bgiu_unenriched_flow_m3_h",
     "description": "Flow rate of unenriched biogas entering the gas upgrading unit (BGIU).",
     "dataType": "number",
     "required": false,
@@ -119,7 +119,7 @@
   },
 
   "enriched_flow_total": {
-    "canonicalName": "enriched_flow_total",
+    "canonicalName": "enriched_flow_total_m3_d",
     "description": "Total volume of enriched (upgraded) gas produced.",
     "dataType": "number",
     "required": false,
@@ -133,7 +133,7 @@
   },
 
   "enriched_flow": {
-    "canonicalName": "enriched_flow",
+    "canonicalName": "enriched_flow_m3_h",
     "description": "Instantaneous or daily flow rate of enriched (upgraded) gas.",
     "dataType": "number",
     "required": false,
@@ -146,7 +146,7 @@
   },
 
   "biogas_yield_dm": {
-    "canonicalName": "biogas_yield_dm",
+    "canonicalName": "biogas_yield_m3_t_dm",
     "description": "Actual biogas yield achieved for the given period.",
     "dataType": "number",
     "required": false,
@@ -159,7 +159,7 @@
   },
 
   "biogas_yield_fm": {
-    "canonicalName": "biogas_yield_fm",
+    "canonicalName": "biogas_yield_m3_t_fm",
     "description": "Actual biogas yield per tonne of fresh matter.",
     "required": false,
     "dataType": "number",
@@ -170,7 +170,7 @@
   },
 
   "ch4_yield_dm": {
-    "canonicalName": "ch4_yield_dm",
+    "canonicalName": "ch4_yield_m3_t_dm",
     "description": "Methane yield per tonne of dry matter.",
     "required": false,
     "dataType": "number",
@@ -181,7 +181,7 @@
   },
 
   "ch4_yield_fm": {
-    "canonicalName": "ch4_yield_fm",
+    "canonicalName": "ch4_yield_m3_t_fm",
     "description": "Methane yield per tonne of fresh matter.",
     "required": false,
     "dataType": "number",

@@ -12,8 +12,8 @@
     ]
   },
 
-  "transfer_to_post_digester_m3": {
-    "canonicalName": "transfer_to_post_digester_m3",
+  "transfer_from_digester_to_post_digester_m3": {
+    "canonicalName": "transfer_from_digester_to_post_digester_m3",
     "description": "Volume of digestate transferred from Digester 1 to the Post Digester.",
     "dataType": "number",
     "required": false,
@@ -25,8 +25,8 @@
     ]
   },
 
-  "total_retention_time_days": {
-    "canonicalName": "total_retention_time_days",
+  "total_retention_time_d": {
+    "canonicalName": "total_retention_time_d",
     "description": "Total hydraulic retention time across the entire process.",
     "dataType": "number",
     "required": false,
@@ -49,8 +49,8 @@
     ]
   },
 
-  "digester1_retention_time_days": {
-    "canonicalName": "digester1_retention_time_days",
+  "digester1_retention_time_d": {
+    "canonicalName": "digester1_retention_time_d",
     "description": "Hydraulic retention time in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -99,8 +99,8 @@
     ]
   },
 
-  "digester1_alkalinity_mg_l": {
-    "canonicalName": "digester1_alkalinity_mg_l",
+  "digester1_alkalinity_tac_mg_l": {
+    "canonicalName": "digester1_alkalinity_tac_mg_l",
     "description": "Alkalinity (TAC) in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -112,8 +112,8 @@
     ]
   },
 
-  "digester1_vfa_mg_l": {
-    "canonicalName": "digester1_vfa_mg_l",
+  "digester1_vfa_fos_mg_l": {
+    "canonicalName": "digester1_vfa_fos_mg_l",
     "description": "Volatile fatty acids (VFA/FOS) in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -125,8 +125,8 @@
     ]
   },
 
-  "digester1_fos_tac_ratio": {
-    "canonicalName": "digester1_fos_tac_ratio",
+  "digester1_fos_tac": {
+    "canonicalName": "digester1_fos_tac",
     "description": "FOS/TAC ratio (stability indicator) in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -137,8 +137,8 @@
     ]
   },
 
-  "digester1_ch4_percent": {
-    "canonicalName": "digester1_ch4_percent",
+  "digester1_ch4_%": {
+    "canonicalName": "digester1_ch4_%",
     "description": "Methane content in biogas from Digester 1.",
     "dataType": "number",
     "required": false,
@@ -162,8 +162,8 @@
     ]
   },
 
-  "digester1_temperature_c": {
-    "canonicalName": "digester1_temperature_c",
+  "digester1_temp_c": {
+    "canonicalName": "digester1_temp_c",
     "description": "Temperature in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -240,8 +240,8 @@
         ]
     },
 
-  "post_digester_retention_time_days": {
-    "canonicalName": "post_digester_retention_time_days",
+  "post_digester_retention_time_d": {
+    "canonicalName": "post_digester_retention_time_d",
     "description": "Hydraulic retention time in the Post Digester.",
     "dataType": "number",
     "required": false,
@@ -253,14 +253,15 @@
   },
 
   "post_digester_volume_m3": {
-    "canonicalName": "post_digester_volume_m3",
+    "canonicalName": "post_digester_pd_volume_m3",
     "description": "Volume in the Post Digester.",
     "dataType": "number",
     "required": false,
     "exampleValues": ["2597", "2600"],
     "aliases": [
       "pd volume",
-      "post digester volume (m3)"
+      "post digester volume (m3)",
+      "post digester pd volume"
     ]
   },
 
@@ -276,8 +277,33 @@
     ]
   },
 
+  "post_digester_ch4_%": {
+    "canonicalName": "post_digester_ch4_%",
+    "description": "Methane content in biogas from the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["54", "55.5"],
+    "aliases": [
+      "ch4",
+      "post digester ch4 (%)",
+      "methane content"
+    ]
+  },
+
+  "post_digester_h2s_ppm": {
+    "canonicalName": "post_digester_h2s_ppm",
+    "description": "Hydrogen sulfide content in biogas from the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["30", "20"],
+    "aliases": [
+      "h2s",
+      "post digester h2s (ppm)"
+    ]
+  },
+
   "post_digester_temperature_c": {
-    "canonicalName": "post_digester_temperature_c",
+    "canonicalName": "post_digester_temp_c",
     "description": "Temperature in the Post Digester.",
     "dataType": "number",
     "required": false,
