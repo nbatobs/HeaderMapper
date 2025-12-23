@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="FuzzySharp" Version="2.0.2" />
+    <PackageReference Include="EPPlus" Version="7.5.1" />
   </ItemGroup>
 
   <ItemGroup>

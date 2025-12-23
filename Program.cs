@@ -8,6 +8,67 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("═══════════════════════════════════════════════════════");
+        Console.WriteLine("  Excel Header Extractor Demo");
+        Console.WriteLine("═══════════════════════════════════════════════════════\n");
+
+        // Get Excel file path from arguments or prompt user
+        string excelFilePath;
+        
+        if (args.Length > 0)
+        {
+            excelFilePath = args[0];
+        }
+        else
+        {
+            Console.Write("Enter the path to your Excel file: ");
+            excelFilePath = Console.ReadLine()?.Trim() ?? string.Empty;
+        }
+
+        if (string.IsNullOrWhiteSpace(excelFilePath))
+        {
+            Console.WriteLine("❌ No file path provided. Exiting.");
+            return;
+        }
+
+        try
+        {
+            var extractor = new ExcelHeaderExtractor();
+            
+            Console.WriteLine($"\n⏳ Processing: {Path.GetFileName(excelFilePath)}...\n");
+            
+            // Extract headers from all sheets
+            var result = extractor.ExtractHeaders(excelFilePath);
+            
+            // Display results
+            extractor.PrintResults(result);
+            
+            // Optionally save to file
+            Console.Write("\n💾 Save results to file? (y/n): ");
+            var saveResponse = Console.ReadLine()?.Trim().ToLower();
+            
+            if (saveResponse == "y" || saveResponse == "yes")
+            {
+                string outputPath = Path.Combine(
+                    Path.GetDirectoryName(excelFilePath) ?? ".",
+                    $"{Path.GetFileNameWithoutExtension(excelFilePath)}_headers.txt"
+                );
+                
+                extractor.SaveToFile(result, outputPath);
+            }
+            
+            Console.WriteLine("\n✅ Done!");
+        }
+        catch (FileNotFoundException ex)
+        {
+            Console.WriteLine($"❌ Error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Unexpected error: {ex.Message}");
+            Console.WriteLine($"   {ex.StackTrace}");
+        }
+        /*
+        Console.WriteLine("═══════════════════════════════════════════════════════");
         Console.WriteLine("  Header Mapper - Fuzzy Column Matching Demo");
         Console.WriteLine("═══════════════════════════════════════════════════════\n");
 
@@ -155,5 +216,7 @@ class Program
             MappingAction.ManualMap => "⚡",
             _ => "?"
         };
+    }
+    */
     }
 }
