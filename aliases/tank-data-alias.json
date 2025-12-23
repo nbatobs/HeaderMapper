@@ -62,8 +62,8 @@
     ]
   },
 
-  "digester1_volume_m3": {
-    "canonicalName": "digester1_volume_m3",
+  "digester1_average_volume_m3": {
+    "canonicalName": "digester1_average_volume_m3",
     "description": "Average volume in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -74,8 +74,8 @@
     ]
   },
 
-  "digester1_dry_matter_percent": {
-    "canonicalName": "digester1_dry_matter_percent",
+  "digester1_dry_matter_%": {
+    "canonicalName": "digester1_dry_matter_%",
     "description": "Dry matter content in Digester 1.",
     "dataType": "number",
     "required": false,
@@ -252,7 +252,20 @@
     ]
   },
 
-  "post_digester_volume_m3": {
+  "post_digester_process_water_m3": {
+    "canonicalName": "post_digester_process_water_m3",
+    "description": "Volume of process water added in the Post Digester.",
+    "dataType": "number",
+    "required": false,
+    "exampleValues": ["15", "20"],
+    "aliases": [
+      "process water",
+      "process water (m3)",
+      "post digester process water"
+    ]
+  },
+
+  "post_digester_pd_volume_m3": {
     "canonicalName": "post_digester_pd_volume_m3",
     "description": "Volume in the Post Digester.",
     "dataType": "number",
@@ -265,8 +278,8 @@
     ]
   },
 
-  "post_digester_dry_matter_percent": {
-    "canonicalName": "post_digester_dry_matter_percent",
+  "post_digester_dry_matter_%": {
+    "canonicalName": "post_digester_dry_matter_%",
     "description": "Dry matter content in the Post Digester.",
     "dataType": "number",
     "required": false,
@@ -302,7 +315,7 @@
     ]
   },
 
-  "post_digester_temperature_c": {
+  "post_digester_temp_c": {
     "canonicalName": "post_digester_temp_c",
     "description": "Temperature in the Post Digester.",
     "dataType": "number",
