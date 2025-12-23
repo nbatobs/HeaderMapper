@@ -8,79 +8,17 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("═══════════════════════════════════════════════════════");
-        Console.WriteLine("  Excel Header Extractor Demo");
-        Console.WriteLine("═══════════════════════════════════════════════════════\n");
-
-        // Get Excel file path from arguments or prompt user
-        string excelFilePath;
-        
-        if (args.Length > 0)
-        {
-            excelFilePath = args[0];
-        }
-        else
-        {
-            Console.Write("Enter the path to your Excel file: ");
-            excelFilePath = Console.ReadLine()?.Trim() ?? string.Empty;
-        }
-
-        if (string.IsNullOrWhiteSpace(excelFilePath))
-        {
-            Console.WriteLine("❌ No file path provided. Exiting.");
-            return;
-        }
-
-        try
-        {
-            var extractor = new ExcelHeaderExtractor();
-            
-            Console.WriteLine($"\n⏳ Processing: {Path.GetFileName(excelFilePath)}...\n");
-            
-            // Extract headers from all sheets
-            var result = extractor.ExtractHeaders(excelFilePath);
-            
-            // Display results
-            extractor.PrintResults(result);
-            
-            // Optionally save to file
-            Console.Write("\n💾 Save results to file? (y/n): ");
-            var saveResponse = Console.ReadLine()?.Trim().ToLower();
-            
-            if (saveResponse == "y" || saveResponse == "yes")
-            {
-                string outputPath = Path.Combine(
-                    Path.GetDirectoryName(excelFilePath) ?? ".",
-                    $"{Path.GetFileNameWithoutExtension(excelFilePath)}_headers.txt"
-                );
-                
-                extractor.SaveToFile(result, outputPath);
-            }
-            
-            Console.WriteLine("\n✅ Done!");
-        }
-        catch (FileNotFoundException ex)
-        {
-            Console.WriteLine($"❌ Error: {ex.Message}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"❌ Unexpected error: {ex.Message}");
-            Console.WriteLine($"   {ex.StackTrace}");
-        }
-        /*
-        Console.WriteLine("═══════════════════════════════════════════════════════");
-        Console.WriteLine("  Header Mapper - Fuzzy Column Matching Demo");
+        Console.WriteLine("  Header Mapper - Excel to Schema Matching");
         Console.WriteLine("═══════════════════════════════════════════════════════\n");
 
         try
         {
-            // Load schema from JSON files
+            // 1. Load canonical schema
             var schemaLoader = new SchemaLoader();
             var schema = schemaLoader.LoadAllSchemas();
-            
             Console.WriteLine($"✓ Loaded {schema.Count} canonical columns from schema files\n");
 
-            // Configure matching
+            // 2. Configure matching
             var config = new MatchingConfig
             {
                 FuzzyMinThreshold = 20,
@@ -95,115 +33,165 @@ class Program
                     ReviewThreshold = 0.70
                 }
             };
-
             var matcher = new HeaderMatcher(schema, config);
 
-            // Demo: Test with various user column headers
-            var testHeaders = new List<string>
+            // 3. Get Excel file path
+            string? excelFilePath = null;
+            
+            if (args.Length > 0)
             {
-                // Exact matches
-                "date",
-                
-                // Should match via aliases
-                "measurement date",
-                "total gas",
-                "gas generation",
-                
-                // Fuzzy matches - typos/variations
-                "totl biogas",
-                "mixer 1 current",
-                "d1 mixer 1 a",
-                "biogas yeild",
-                
-                // Tricky ones
-                "Primary Gas Output",
-                "Day",
-                "chp output",
-                
-                // Should fail
-                "random_column_name"
-            };
-
-            Console.WriteLine("Testing Column Mapping:");
-            Console.WriteLine("───────────────────────────────────────────────────────\n");
-
-            foreach (var header in testHeaders)
+                excelFilePath = args[0];
+            }
+            else
             {
-                var result = matcher.MapSingleHeader(header);
-                PrintMappingResult(result);
+                Console.WriteLine("Enter path to Excel file (or press Enter to skip):");
+                Console.Write("Excel File: ");
+                excelFilePath = Console.ReadLine()?.Trim();
             }
 
-            // Interactive mode
-            Console.WriteLine("\n═══════════════════════════════════════════════════════");
-            Console.WriteLine("  Interactive Mode");
-            Console.WriteLine("═══════════════════════════════════════════════════════\n");
-            Console.WriteLine("Enter column headers to map (or 'quit' to exit):\n");
-
-            while (true)
+            // 4. Process Excel file if provided
+            if (!string.IsNullOrWhiteSpace(excelFilePath) && File.Exists(excelFilePath))
             {
-                Console.Write("User Column: ");
-                var input = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(input) || input.ToLower() == "quit")
-                    break;
-
-                Console.WriteLine("\nTop 3 Matches:");
-                Console.WriteLine("───────────────────────────────────────────────────────");
-                
-                var topMatches = matcher.GetTopMatches(input, 3);
-                
-                if (topMatches.Count == 0)
-                {
-                    Console.WriteLine(" No matches found\n");
-                }
-                else
-                {
-                    for (int i = 0; i < topMatches.Count; i++)
-                    {
-                        Console.WriteLine($"\n{i + 1}. {topMatches[i].CanonicalColumn}");
-                        Console.WriteLine($"   Confidence: {topMatches[i].Confidence:P0}");
-                        Console.WriteLine($"   Action: {GetActionEmoji(topMatches[i].RecommendedAction)} {topMatches[i].RecommendedAction}");
-                        Console.WriteLine($"   Details: {topMatches[i].MatchDetails}");
-                    }
-                    Console.WriteLine();
-                }
+                ProcessExcelFile(excelFilePath, matcher);
+            }
+            else if (!string.IsNullOrWhiteSpace(excelFilePath))
+            {
+                Console.WriteLine($"❌ File not found: {excelFilePath}");
+                Console.WriteLine("\nFalling back to interactive mode...\n");
+                RunInteractiveMode(matcher);
+            }
+            else
+            {
+                // No file provided - run interactive mode
+                Console.WriteLine("\n═══════════════════════════════════════════════════════");
+                Console.WriteLine("  Interactive Header Testing Mode");
+                Console.WriteLine("═══════════════════════════════════════════════════════\n");
+                RunInteractiveMode(matcher);
             }
 
-            Console.WriteLine("\n✓ Done!");
+            Console.WriteLine("\n✅ Done!");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($" Error: {ex.Message}");
-            Console.WriteLine(ex.StackTrace);
+            Console.WriteLine($"❌ Error: {ex.Message}");
+            Console.WriteLine($"   {ex.StackTrace}");
         }
     }
 
-    static void PrintMappingResult(MappingResult result)
+    static void ProcessExcelFile(string filePath, HeaderMatcher matcher)
+    {
+        Console.WriteLine($"📊 Processing Excel file: {Path.GetFileName(filePath)}\n");
+
+        // Extract headers from Excel
+        var extractor = new ExcelHeaderExtractor();
+        var excelResult = extractor.ExtractHeaders(filePath);
+
+        Console.WriteLine($"✓ Extracted headers from {excelResult.Sheets.Count} sheet(s)\n");
+
+        // Process each sheet
+        foreach (var sheet in excelResult.Sheets)
+        {
+            Console.WriteLine("═══════════════════════════════════════════════════════");
+            Console.WriteLine($"  Sheet: {sheet.SheetName}");
+            Console.WriteLine("═══════════════════════════════════════════════════════");
+            Console.WriteLine($"Header Rows Detected: {sheet.HeaderRowCount}");
+            Console.WriteLine($"Total Columns: {sheet.Headers.Count}");
+            Console.WriteLine();
+
+            var autoMapped = 0;
+            var needsReview = 0;
+            var needsManual = 0;
+
+            // Match each header
+            foreach (var header in sheet.Headers)
+            {
+                var match = matcher.MapSingleHeader(header);
+                PrintMatchResult(match);
+
+                switch (match.RecommendedAction)
+                {
+                    case MappingAction.AutoMap:
+                        autoMapped++;
+                        break;
+                    case MappingAction.Review:
+                        needsReview++;
+                        break;
+                    case MappingAction.ManualMap:
+                        needsManual++;
+                        break;
+                }
+            }
+
+            // Sheet summary
+            Console.WriteLine("\n───────────────────────────────────────────────────────");
+            Console.WriteLine($"Sheet Summary:");
+            Console.WriteLine($"  ✓ Auto-mapped:     {autoMapped,3} ({(sheet.Headers.Count > 0 ? (double)autoMapped / sheet.Headers.Count : 0):P0})");
+            Console.WriteLine($"  ⚠ Needs review:    {needsReview,3} ({(sheet.Headers.Count > 0 ? (double)needsReview / sheet.Headers.Count : 0):P0})");
+            Console.WriteLine($"  ⚡ Manual mapping:  {needsManual,3} ({(sheet.Headers.Count > 0 ? (double)needsManual / sheet.Headers.Count : 0):P0})");
+            Console.WriteLine("───────────────────────────────────────────────────────\n");
+        }
+
+        // Overall summary
+        var totalHeaders = excelResult.Sheets.Sum(s => s.Headers.Count);
+        Console.WriteLine("═══════════════════════════════════════════════════════");
+        Console.WriteLine($"  Overall Summary");
+        Console.WriteLine("═══════════════════════════════════════════════════════");
+        Console.WriteLine($"Total Headers Processed: {totalHeaders}");
+        Console.WriteLine($"Sheets: {excelResult.Sheets.Count}");
+    }
+
+    static void RunInteractiveMode(HeaderMatcher matcher)
+    {
+        Console.WriteLine("Enter column headers to map (or 'quit' to exit):\n");
+
+        while (true)
+        {
+            Console.Write("User Column: ");
+            var input = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(input) || input.ToLower() == "quit")
+                break;
+
+            Console.WriteLine("\nTop 3 Matches:");
+            Console.WriteLine("───────────────────────────────────────────────────────");
+            
+            var topMatches = matcher.GetTopMatches(input, 3);
+            
+            if (topMatches.Count == 0)
+            {
+                Console.WriteLine("❌ No matches found\n");
+            }
+            else
+            {
+                for (int i = 0; i < topMatches.Count; i++)
+                {
+                    Console.WriteLine($"\n{i + 1}. {topMatches[i].CanonicalColumn}");
+                    Console.WriteLine($"   Confidence: {topMatches[i].Confidence:P0}");
+                    Console.WriteLine($"   Action: {GetActionEmoji(topMatches[i].RecommendedAction)} {topMatches[i].RecommendedAction}");
+                    Console.WriteLine($"   Details: {topMatches[i].MatchDetails}");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+
+    static void PrintMatchResult(MappingResult result)
     {
         var actionEmoji = GetActionEmoji(result.RecommendedAction);
-        var matchEmoji = result.MatchType switch
-        {
-            HeaderMatchType.ExactMatch => "✓",
-            HeaderMatchType.AliasMatch => "✓",
-            HeaderMatchType.FuzzyMatch => "~",
-            HeaderMatchType.NoMatch => "✗",
-            _ => "?"
-        };
 
-        Console.WriteLine($"{matchEmoji} '{result.UserColumn}'");
+        Console.Write($"{actionEmoji} ");
+        Console.Write($"{result.UserColumn,-35}");
         
         if (result.MatchType != HeaderMatchType.NoMatch)
         {
-            Console.WriteLine($"   → {result.CanonicalColumn}");
-            Console.WriteLine($"   Confidence: {result.Confidence:P0} | {result.MatchType}");
-            Console.WriteLine($"   Action: {actionEmoji} {result.RecommendedAction}");
+            Console.Write($" → {result.CanonicalColumn,-25}");
+            Console.Write($" {result.Confidence:P0}");
         }
         else
         {
-            Console.WriteLine($"   → No match found");
+            Console.Write($" → {"No match",-25}");
         }
         
-        Console.WriteLine($"   {result.MatchDetails}");
         Console.WriteLine();
     }
 
@@ -217,6 +205,5 @@ class Program
             _ => "?"
         };
     }
-    */
-    }
 }
+
